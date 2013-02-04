@@ -23,12 +23,10 @@ Call plugin with styles.
 	<script>
 		$(document).ready(function(){
 			$('#anyIDtag').notify({ // Optional parameters. Default values.
-				active: true; // True: Show message, False: Show symbol to show message.
-				close: false; // True: User click on close message hide, False: User click on close show arrow to show message again.
-				color: "#888"; // Font Color box
-				background: "#FF9"; // Background color box
-				border: "#FFF"; // Bottom border Color box
-				opacity: ".9" // Opacity box
+				active: true, // True: Show message, False: Show symbol to show message.
+				close: false, // True: User click on close message hide, False: User click on close show arrow to show message again.
+				color: "#888", // Font Color box
+				background: "#FF9" // Background color box
 			});
 		});
 	</script>

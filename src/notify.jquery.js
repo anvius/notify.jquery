@@ -15,12 +15,10 @@
  * 		<script>
  * 			$(document).ready(function(){
  * 				$('#anyIDtag').notify({ // Optional parameters. Default values.
- * 					active: true; // True: Show message, False: Show symbol to show message.
- * 					close: false; // True: User click on close message hide, False: User click on close show arrow to show message again.
- * 					color: "#888"; // Font Color box
- * 					background: "#FF9"; // Background color box
- * 					border: "#888"; // Bottom border Color box
- * 					opacity: ".9" // Opacity box
+ * 					active: true, // True: Show message, False: Show symbol to show message.
+ * 					close: false, // True: User click on close message hide, False: User click on close show arrow to show message again.
+ * 					color: "#888", // Font Color box
+ * 					background: "#FF9" // Background color box
  * 				});
  *			});
  * 		</script>
@@ -35,18 +33,22 @@
  * 
  *
  ******************************/
- 
 (function(e){
 	jQuery.fn.extend({
-		notify:function(options){
+		notify:function(o){
+ 			/*var defaultstyles = {
+				info: { 'color': '#FFF', 'background': '#222' },
+				success: { 'color': "#FFF", 'background': "#5F5" },
+				warning: { 'color': '#FFF', 'background': '#F90' },
+				alert: { 'color': '#FFF', 'background': '#F33' },
+				deal: { 'color': '#888', 'background': '#FF9' }
+			};*/
 			this.options = $.extend({
 				active: true,
 				close: false,
-				color: "#888",
-				background: "#FF9",
-				border: "#888",
-				opacity: ".9"
-			}, options);
+				color: "#444",
+				background: "#FF9"
+			}, o);
 			
 			var nclose = this.options.close;
 			
@@ -66,6 +68,7 @@
 
 			$('.notify-message').css({
 				'background-color': this.options.background,
+				'color': this.options.color,
 				'z-index': '101',
 				'position': 'absolute',
 				'top': '0',
@@ -75,21 +78,22 @@
 				'overflow': 'hidden',
 				'box-shadow': '0 0 5px #444',
 				'border': '0',
-				'border-bottom': '2px solid '+this.options.border,
-				'opacity': this.options.opacity
+				'border-bottom': '2px solid #888',
+				'opacity': '.9'
 			});
 
 			$('.notify-arrow').css({
 				'background-color': this.options.background,
+				'color': this.options.color,
 				'z-index': '101',
 				'position': 'absolute',
 				'top': '0',
-				'right': '50px',
+				'right': '0',
 				'overflow': 'hidden',
 				'box-shadow': '0 0 5px #444',
-				'opacity': this.options.opacity,
-				'border': '0 2px 2px 2px solid '+this.options.border,
-				'border-radius': '0 0 5px 5px'
+				'opacity': '.9',
+				'border': '0 0 2px 2px solid #888',
+				'border-radius': '0 0 0 5px'
 			});
 			
 			if( this.options.active ) {
