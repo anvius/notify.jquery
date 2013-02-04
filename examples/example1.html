@@ -3,16 +3,18 @@
 	<head>
 		<title>Notify jQuery Example</title>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<script src="../notify.jquery.min.js"></script>
 	</head>
 	<body>
+		<br /><br />
 		<h1>Example notify.jquery</h1>
 		<h2>Message notify with jQuery easily.</h2>
 		<div id="notify">Get you copy of notify.jquery on <a href="http://www.github.com/zeura/notify.jquery">Github</a></div>
   		<small>(c) 2013, Antonio Villamarin <http://ant.onio.org>, License: MIT <http://opensource.org/licenses/MIT></small>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script src="../notify.jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
-				$('#anyIDtag').notify();
+				$('#notify').notify();
 			});
 		</script>
 	</body>

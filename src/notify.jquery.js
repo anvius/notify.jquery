@@ -19,7 +19,7 @@
  * 					close: false; // True: User click on close message hide, False: User click on close show arrow to show message again.
  * 					color: "#888"; // Font Color box
  * 					background: "#FF9"; // Background color box
- * 					border: "#FFF"; // Bottom border Color box
+ * 					border: "#888"; // Bottom border Color box
  * 					opacity: ".9" // Opacity box
  * 				});
  *			});
@@ -44,11 +44,13 @@
 				close: false,
 				color: "#888",
 				background: "#FF9",
-				border: "#FFF",
+				border: "#888",
 				opacity: ".9"
 			}, options);
 			
 			var nclose = this.options.close;
+			
+			$(this).hide();
 			
 			$('body').append('<span class="notify-arrow"></span>');
 			
@@ -69,8 +71,6 @@
 				'top': '0',
 				'right': '0',
 				'left': '0',
-				'font-weight': 'bold',
-				'font-size': '16px' ,
 				'padding': '10px 20px',
 				'overflow': 'hidden',
 				'box-shadow': '0 0 5px #444',
@@ -93,12 +93,12 @@
 			});
 			
 			if( this.options.active ) {
-				$('.notify-message').show();
+				$('.notify-message').delay(1000).slideDown('slow');
 				$('.notify-arrow').hide();
 			} else {
 				$('.notify-message').hide();
 				if( !this.options.close ) {
-					$('.notify-arrow').show();
+					$('.notify-arrow').delay(1000).slideDown('slow');
 				} else {
 					$('notify-arrow').hide();
 				}

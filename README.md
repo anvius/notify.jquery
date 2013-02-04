@@ -10,9 +10,10 @@ Put your message on html file.
 	<div id="anyIDtag">Information/Deal/Alert message</div>
 ~~~
 
-Include lib.
+Include lib & jquery.
 
 ~~~  
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 	<script src="notify.jquery.min.js"></script>
 ~~~
 
@@ -42,7 +43,13 @@ Or without slyles.
 		});
 	</script>
 ~~~
- 
+
+### Styles
+
+You can add new styles to message font with css class: .notify-message.
+
+By default this message take the document font style.
+
 (c) 2013, [Antonio Villamarin][1]
  
 License: MIT [http://opensource.org/licenses/MIT][2]
