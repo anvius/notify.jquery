@@ -25,7 +25,7 @@ Call plugin with styles.
 			$('#anyIDtag').notify({ // Optional parameters. Default values.
 				active: true, // True: Show message, False: Show symbol to show message.
 				close: false, // True: User click on close message hide, False: User click on close show arrow to show message again.
-				color: "#888", // Font Color box
+				color: "#444", // Font Color box
 				background: "#FF9" // Background color box
 			});
 		});
